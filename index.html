@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday 🎉</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Floating Balloons */
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 60px;
+      height: 80px;
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-500 flex flex-col items-center justify-center min-h-screen overflow-hidden text-center relative">
+
+  <!-- Background Music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="WhatsApp Audio 2025-08-24 at 22.40.53_d7dee3ca.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Heading -->
+  <h1 class="text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg animate-bounce">
+    🎂 Happy Birthday, <span class="text-yellow-300">Bachiya</span>! 🎉
+  </h1>
+
+  <!-- Sub text -->
+  <p class="mt-6 text-lg md:text-2xl text-white font-light max-w-xl">
+    Wishing you endless happiness, success, and love 💖  
+  </p>
+
+  <!-- Button Surprise -->
+  <button 
+    onclick="showMessage()" 
+    class="mt-10 px-6 py-3 rounded-2xl bg-yellow-300 text-purple-700 font-semibold text-xl shadow-lg hover:scale-110 transition">
+    🎁 Tap Here
+  </button>
+
+ <!-- Hidden Surprise Message -->
+<div id="surprise" class="hidden mt-8 text-3xl text-white font-bold animate-pulse">
+  ✨ You are the brightest star in the sky today and always 🌟  
+  <div style="display: flex; justify-content: center;">
+    <img style="width:300px; height:auto;" 
+         src="WhatsApp Image 2025-08-24 at 22.49.48_9e97c403.jpg" 
+         alt="Happy Birthday">
+  </div>
+</div>
+
+    <p class="mt-6 text-2xl text-yellow-200 font-light">
+      With all my love and blessings 💕  
+    </p>
+    <p class="mt-4 text-xl italic text-white/90">
+      — Your Big Brother ❤️
+    </p>
+  </div>
+
+  <!-- Signature -->
+  <footer class="absolute bottom-5 text-white/70 text-sm">
+    Crafted with ❤️ by Rajeev
+  </footer>
+
+  <script>
+    // Create Floating Balloons
+    function createBalloon() {
+      const balloon = document.createElement("div");
+      balloon.className = "balloon";
+      balloon.style.left = Math.random() * window.innerWidth + "px";
+      balloon.style.background = `hsl(${Math.random() * 360}, 70%, 70%)`;
+      document.body.appendChild(balloon);
+      setTimeout(() => balloon.remove(), 8000);
+    }
+    setInterval(createBalloon, 600);
+
+    // Surprise Message
+    function showMessage() {
+      document.getElementById("surprise").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
