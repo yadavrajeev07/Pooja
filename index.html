@@ -23,8 +23,8 @@
 </head>
 <body class="bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-500 flex flex-col items-center justify-center min-h-screen overflow-hidden text-center relative">
 
-  <!-- Background Music -->
-  <audio id="bg-music" autoplay loop>
+  <!-- Background Music (muted at start to allow autoplay) -->
+  <audio id="bg-music" loop muted>
     <source src="WhatsApp Audio 2025-08-24 at 22.40.53_d7dee3ca.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
@@ -85,6 +85,15 @@
     function showMessage() {
       document.getElementById("surprise").classList.remove("hidden");
     }
+
+    // Start background music after first click
+    document.addEventListener("click", () => {
+      const music = document.getElementById("bg-music");
+      if (music.paused) {
+        music.muted = false;
+        music.play();
+      }
+    }, { once: true }); // runs only once
   </script>
 
 </body>
